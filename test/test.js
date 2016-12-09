@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import offof from '../src/index';
+const expect = require('chai').expect;
+const offof = require('../dist/index');
 
 describe('#offof', () => {
 
