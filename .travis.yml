@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - '4'
+branches:
+  only:
+  - develop
+  - master
+services:
+  - mongodb
+cache:
+  directories:
+    - node_modules
+after_success:
+  - npm run coverage
+deploy:
+  app:
+    master: videoanalytics
+    develop: videoanalytics-staging
+  provider: heroku
+  api_key:
+    secure: THkxiAZ48+2jJS15hls4AL34V81bs6t7qnbXJm6hNtCYM2blyfzXO/lqlPe19myYsve1TuYHrw04Xuz4GgBv0cXXolSIz/bROOm+jYfBn5xgM0/Uss+qfKBb0MlRE2ip/JjYnovraaJBSHVldmSWpHmNyD03zJwegVeJob6QcUuCWH0DTxvo6MWPoIx8Gofcuv3ciUIE0ZsGWN8Qtqs5TnJrriPN5ngjkazOnLNIQvmXj556GpGe2b/dpzOzQXQL7kczehQHEilCN/mDszLPEvQUhAztQEz6lfOnQuHJJFWqaAPAkM8auHKUlTTdCEc3oIU0Re55Jm3LiZJxoAdMjVFa2BeoYGrsR1jYhDTQaZkdwv6E8HHubQjsSbawmXIoKq5qhWhsmQ474hMkkH3mxr2oTUT94dp2CNPxMLIBfA/alPiiuue157h0OvVQJc2zyhKzJSS5VT7RrpTVlZzbiga5fnO+1s2w/aJZOlhC45TzvV4kT4IP/5q03KhIvx4AD7nTyixZSas3+Mxf6eq3A4AS7JwITuYZJeNIfp9Y0l6OPTecljvYc/TZLFKU4FmuhUbS2zcjGgbjNK/vPSTQF44wMD8dujH0594oMQMjlqggIDwMwJrZLHDwphanc0jpHy26Lw6Wavm+CWGwRq1MBmkbg4FXTzJaUddJU/H+jos=

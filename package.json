@@ -4,14 +4,14 @@
   "description": "HTML5 video analytics",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --reporter spec",
-    "coverage": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha --report lcovonly -- --recursive --reporter spec  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- --recursive --reporter spec",
+    "coverage": "[ -f ./coverage/lcov.info ] && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || exit 1",
     "build": "babel src --out-dir dist",
     "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adamstankiewicz/videoanalytics.io.git"
+    "url": "https://github.com/adamstankiewicz/videoanalytics.io.git"
   },
   "keywords": [
     "video analytics",
