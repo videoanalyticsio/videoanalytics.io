@@ -1,2 +1,1 @@
 # videoanalytics.io
-videoanalytics.io

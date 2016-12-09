@@ -1,0 +1,41 @@
+{
+  "name": "videoanalytics.io",
+  "version": "0.0.1",
+  "description": "HTML5 video analytics",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --reporter spec",
+    "coverage": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha --report lcovonly -- --recursive --reporter spec  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "build": "babel src --out-dir dist",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamstankiewicz/videoanalytics.io.git"
+  },
+  "keywords": [
+    "video analytics",
+    "html5 video",
+    "video",
+    "analytics"
+  ],
+  "author": "Adam Stankiewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamstankiewicz/videoanalytics.io/issues"
+  },
+  "homepage": "https://github.com/adamstankiewicz/videoanalytics.io#readme",
+  "engines": {
+    "node": ">=4.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.20.0",
+    "babel-istanbul": "^0.11.0",
+    "babel-node": "^6.5.2",
+    "babel-preset-es2015": "^6.18.0",
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.15",
+    "mocha": "^3.2.0"
+  }
+}
