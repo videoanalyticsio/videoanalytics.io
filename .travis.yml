@@ -3,19 +3,17 @@ node_js:
   - '4'
 branches:
   only:
-  - develop
   - master
-services:
-  - mongodb
 cache:
   directories:
     - node_modules
 after_success:
   - npm run coverage
 deploy:
-  app:
-    master: videoanalytics
-    develop: videoanalytics-staging
-  provider: heroku
+  provider: npm
+  email: agstanki@gmail.com
   api_key:
-    secure: THkxiAZ48+2jJS15hls4AL34V81bs6t7qnbXJm6hNtCYM2blyfzXO/lqlPe19myYsve1TuYHrw04Xuz4GgBv0cXXolSIz/bROOm+jYfBn5xgM0/Uss+qfKBb0MlRE2ip/JjYnovraaJBSHVldmSWpHmNyD03zJwegVeJob6QcUuCWH0DTxvo6MWPoIx8Gofcuv3ciUIE0ZsGWN8Qtqs5TnJrriPN5ngjkazOnLNIQvmXj556GpGe2b/dpzOzQXQL7kczehQHEilCN/mDszLPEvQUhAztQEz6lfOnQuHJJFWqaAPAkM8auHKUlTTdCEc3oIU0Re55Jm3LiZJxoAdMjVFa2BeoYGrsR1jYhDTQaZkdwv6E8HHubQjsSbawmXIoKq5qhWhsmQ474hMkkH3mxr2oTUT94dp2CNPxMLIBfA/alPiiuue157h0OvVQJc2zyhKzJSS5VT7RrpTVlZzbiga5fnO+1s2w/aJZOlhC45TzvV4kT4IP/5q03KhIvx4AD7nTyixZSas3+Mxf6eq3A4AS7JwITuYZJeNIfp9Y0l6OPTecljvYc/TZLFKU4FmuhUbS2zcjGgbjNK/vPSTQF44wMD8dujH0594oMQMjlqggIDwMwJrZLHDwphanc0jpHy26Lw6Wavm+CWGwRq1MBmkbg4FXTzJaUddJU/H+jos=
+    secure: v3hpVJYKN1LkNk69rrorjovucZ4ePcBUo7CNFWmko/4FdJ1xES3D1EmkngzDtv1MjffL0/8O+kaQf6ddZXAu2ZgeWtMNkZ7F/5VetJo50rtlRaQ1ggZM5Rl92McJlDIr7ozKV1nN0zgDAJkGVXdEFqWgdE6JIz303/YtRMbtylrDTf7PD68ElgwsVBxsvDyvzjcXCbrdE+wPR9RTPjTtWUYw0ggqAEnP9hdzUXumxaHX1WG4PRJQjx/uD7pAY6nugbBj3DOMe9M4bsWgdFDopWI48jPLa+4eFoVmQLttA67oTAaHj3THi1j37rP0Gjc8VaVtm8oj6NzsCCJGT58yaZjhodoljWqmJRCIbu/fD9WDwn7y7kHaSeaN6cSsdAKa0EwZhXNPa8A0OU4mJLd1/JkN2vCIA5L68K9Z2Qhgh5LtNQPO3T1tbDGekeNc4s7xwPtUtd13eWrmZFuv+Eddg7xfdNzfENrMEzuCK8mgfiuyv/4o9NYshLbF1CLoWAe5o+0rX13i+xdU6ae8PPgRKddrCPMJ2x+dGhFeobb12zW5eb8EXWyyZf3MwnLax9O/lk31CHHcTvhO9jkK+c0trEARqlP5Mdr+nLqPgfAKbAe4kfI1sSfutHNzspzJAYsG+K3EOa4JLKkjYj6RR2AmIJ67Lwt8B2PJuZMkh/dqoGo=
+  on:
+    tags: true
+    repo: adamstankiewicz/videoanalytics.io
