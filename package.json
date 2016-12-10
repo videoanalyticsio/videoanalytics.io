@@ -1,6 +1,6 @@
 {
   "name": "videoanalytics.io",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "HTML5 video analytics",
   "main": "./dist/index.js",
   "scripts": {
@@ -35,6 +35,5 @@
     "coveralls": "^2.11.15",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
-  },
-  "dependencies": {}
+  }
 }
