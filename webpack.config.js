@@ -5,8 +5,8 @@ const path = require('path');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const libraryName = 'videoanalytics.io';
 const env = process.env.WEBPACK_ENV;
-const plugins = [];
-let outputFile;
+let plugins = [];
+let outputFile = '';
 
 plugins.push(new HtmlWebpackPlugin({
 	title: 'videoanalytics.io',
