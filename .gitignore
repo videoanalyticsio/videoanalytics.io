@@ -4,8 +4,8 @@
 # Coverage directory
 coverage
 
-# Yarn lockfile
-yarn.lock
+# Lockfile(s) (e.g., Yarn)
+*.lock
 
 # Dependency directories
 node_modules
