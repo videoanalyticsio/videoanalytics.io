@@ -8,11 +8,21 @@
   	<h1>videoanalytics.io</h1>
   	<div id="players">
   		<!-- HTML5 -->
-      <video>
+      <video id="html5-video-player" controls>
         <source src="./videos/big_buck_bunny/big_buck_bunny.mp4" type="video/mp4" />
         <source src="./videos/big_buck_bunny/big_buck_bunny.ogv" type="video/ogg" />
         <source src="./videos/big_buck_bunny/big_buck_bunny.webm" type="video/webm" />
       </video>
   	</div>
+
+    <!-- Compiled script(s) -->
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+    <!-- Custom script(s) for example -->
+    <script>
+      var result = VideoAnalytics(2);
+      console.log(result);
+    </script>
   </body>
 </html>

@@ -8,8 +8,7 @@
     "coverage": "[ -f ./coverage/lcov.info ] && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || exit 1",
     "build": "WEBPACK_ENV=build webpack",
     "prepublish": "npm run build",
-    "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
-    "start": "WEBPACK_ENV=dev webpack-dev-server --progress --colors"
+    "dev": "WEBPACK_ENV=dev webpack --watch & webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -39,6 +38,8 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.18.0",
     "chai": "^3.5.0",
+    "clean-webpack-plugin": "^0.1.14",
+    "copy-webpack-plugin": "^4.0.1",
     "coveralls": "^2.11.15",
     "eslint": "^3.12.0",
     "eslint-loader": "^1.6.1",
@@ -50,5 +51,7 @@
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.17.2"
+  }
 }
