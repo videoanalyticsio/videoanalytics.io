@@ -1,11 +1,10 @@
 'use strict';
 
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const _ = require('lodash');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 
 const libraryVersion = require('./package.json').version;
 
@@ -14,23 +13,22 @@ const env = process.env.WEBPACK_ENV;
 let outputFile = '';
 
 let plugins = [
-	new CleanWebpackPlugin(['dist']),
-	new CopyWebpackPlugin([
-		{ from: './examples/videos', to: 'examples/videos' }
-	]),
-	new HtmlWebpackPlugin({
-		inject: false,
-		title: 'videoanalytics.io',
-		filename: path.join(__dirname, 'dist/examples/basic.html'),
-		template: path.join(__dirname, 'examples/basic.ejs')
-	})
+	new CleanWebpackPlugin(['dist'])
 ];
 
 if (env === 'build') {
-	plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
-	outputFile = `${libraryName}-${libraryVersion}.min.js`;
+	plugins.push(
+		new webpack.optimize.UglifyJsPlugin({
+			minimize: true,
+			compress: {
+        warnings: false
+      }
+		}),
+		new UnminifiedWebpackPlugin()
+	);
+	outputFile = `${libraryName}.min.js`;
 } else {
-	outputFile = `${libraryName}-${libraryVersion}.js`;
+	outputFile = `${libraryName}.js`;
 }
 
 const config = {
@@ -65,7 +63,6 @@ const config = {
 		extensions: ['', '.js']
 	},
 	devServer: {
-		contentBase: './dist',
 		inline: true,
 		stats: {
 			chunks: false
