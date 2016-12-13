@@ -5,6 +5,7 @@ const path = require('path');
 const _ = require('lodash');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 const libraryVersion = require('./package.json').version;
 
@@ -13,7 +14,8 @@ const env = process.env.WEBPACK_ENV;
 let outputFile = '';
 
 let plugins = [
-	new CleanWebpackPlugin(['dist'])
+	new CleanWebpackPlugin(['dist']),
+	new WriteFilePlugin()
 ];
 
 if (env === 'build') {
@@ -37,7 +39,7 @@ const config = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: outputFile,
-		library: 'VideoAnalytics',
+		library: 'VideoAnalyticsIO',
 		libraryTarget: 'umd',
 		umdNamedDefine: true
 	},
@@ -64,6 +66,7 @@ const config = {
 	},
 	devServer: {
 		inline: true,
+		outputPath: path.resolve(__dirname, 'dist'),
 		stats: {
 			chunks: false
 		}
