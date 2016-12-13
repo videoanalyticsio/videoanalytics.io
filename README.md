@@ -9,7 +9,7 @@
 The fastest way to get started is to serve JavaScript from the [unpkg](https://unpkg.com/) CDN:
 
 ```html
-<script src="https://unpkg.com/videoanalytics.io@0.0.6/dist/videoanalytics.io.min.js"></script>
+<script src="https://unpkg.com/videoanalytics.io@0.0.7/dist/videoanalytics.io.min.js"></script>
 ```
 
 If you'd like to use [npm](https://www.npmjs.com/), it's as easy as:

@@ -1,8 +1,8 @@
 {
   "name": "videoanalytics.io",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "HTML5 video analytics",
-  "main": "./dist/index.js",
+  "main": "./dist/videoanalytics.io.js",
   "scripts": {
     "test": "babel-istanbul cover _mocha -- -r jsdom-global/register --colors --recursive --reporter spec",
     "coverage": "[ -f ./coverage/lcov.info ] && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || exit 1",
