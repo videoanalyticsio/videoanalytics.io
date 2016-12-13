@@ -1,6 +1,6 @@
 {
   "name": "videoanalytics.io",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "HTML5 video analytics",
   "main": "./dist/videoanalytics.io.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/adamstankiewicz/videoanalytics.io#readme",
   "engines": {
-    "node": ">=4.7.0"
+    "node": ">=5.12.0"
   },
   "files": [
     "dist"
