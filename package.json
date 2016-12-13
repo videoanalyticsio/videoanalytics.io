@@ -4,15 +4,16 @@
   "description": "HTML5 video analytics",
   "main": "./dist/videoanalytics.io.js",
   "scripts": {
-    "test": "babel-istanbul cover _mocha -- -r jsdom-global/register --colors --recursive --reporter spec",
+    "test": "babel-istanbul cover _mocha -- --colors --recursive --reporter spec",
     "coverage": "[ -f ./coverage/lcov.info ] && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || exit 1",
     "build": "WEBPACK_ENV=build webpack --progress --colors",
     "prepublish": "npm run build",
-    "dev": "WEBPACK_ENV=dev webpack-dev-server"
+    "dev": "WEBPACK_ENV=dev webpack-dev-server",
+    "lint": "eslint ./src/**/*.js /test/**/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adamstankiewicz/videoanalytics.io.git"
+    "url": "https://github.com/videoanalyticsio/videoanalytics.io.git"
   },
   "keywords": [
     "video analytics",
@@ -20,12 +21,12 @@
     "video",
     "analytics"
   ],
-  "author": "Adam Stankiewicz",
-  "license": "MIT",
+  "author": "videoanalytics.io",
+  "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/adamstankiewicz/videoanalytics.io/issues"
+    "url": "https://github.com/videoanalyticsio/videoanalytics.io/issues"
   },
-  "homepage": "https://github.com/adamstankiewicz/videoanalytics.io#readme",
+  "homepage": "https://github.com/videoanalyticsio/videoanalytics.io#readme",
   "engines": {
     "node": ">=5.12.0"
   },
@@ -44,10 +45,10 @@
     "clean-webpack-plugin": "^0.1.14",
     "coveralls": "^2.11.15",
     "eslint": "^3.12.0",
+    "eslint-config-airbnb-base": "^11.0.0",
     "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
     "istanbul": "^0.4.5",
-    "jsdom": "^9.8.3",
-    "jsdom-global": "^2.1.0",
     "mocha": "^3.2.0",
     "unminified-webpack-plugin": "^1.1.1",
     "webpack": "^1.14.0",

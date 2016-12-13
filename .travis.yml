@@ -1,15 +1,26 @@
 language: node_js
 node_js:
-- '5'
+  - '5'
+sudo: required
 branches:
   only:
     - develop
     - master
 cache:
+  yarn: true
   directories:
-  - node_modules
+    - node_modules
+before_install:
+  - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
+  - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - sudo apt-get update -qq
+  - sudo apt-get install -y -qq yarn
+install:
+  - yarn
+  - npm run lint
 after_success:
   - npm run coverage
 notifications:
   slack:
-    secure: TwObw6u8sWi4MUWN75wWu7Davay2UFFfZzPlx21ur41uHLBwh7BJQLNLFAJHgkzARLQJsDC3r2EBqRG3SCUOkV1ZPSzgWNEyAmcdnlPpTJLSD+D8y9oLz9ENMafrrli6hCndS7RpvaprZcB0T64JF+Z7kjBYvk56R1dfdVoB+xkCnK2Z83eLtPkzokq33ZAfsDIBaZC/OluGkvABVYnsUt7rStD5bBkM+1WAYo7G2jLo/cc6FjC2eAGMd+bEY3glz2oS8ZF1QeQfM5mEy/K9ZYsFC22e5DKLF2imb7UGp7FsvCwUVGSs/yHVjAOmN+o76soN5EYO7s5fJ7ZcQ5jiAAKC4yh9+KjkSYKHt7odYD50A42TpHPgyfIWhLACcAHqotUtmr0MZ32yKHQAEtovRoWWOOccOrN77570BTGfxgx7VI/gm9RR34TFpIT6WPLjvUIwj5Tw0GlPYqNP9dL6dMnZA0j5TC7/MSZr5M5vWgpKKKd3Lje0y+iRQ0z3WeHnEDUgfmORO2bz4bJ79+/Jibf0Vkvofwjw8dI5udXupHztsSY+fS6DsoE6WyTUQsKd4zLy4fEHqoU51H4tfIWoPWlYgdetNQoAFGBOKX28z97bswBXlSXG9qN5/9Ci58Yhd0XzS5rgQ78zVXm6SeV47KqSeNZy0en/xUq+aLSQI/g=
+    rooms:
+      secure: MOsFT37VLHqav4nIrbVX37nTr3Qm5/D3nEY1zaSHi8AAs/kq1Qm1fZpzrG54JGqoJ/zMINX9jPAjfCQwjIm81P0iswzPZYBSK08UmxIe/2wBIC3LkE4kMN/PzBTCYGMkg/XKqB9TuzP5dxAJaDtL0NvraJf9H5hyIo96EEr1kVoDj+cQk3ewe3odVX/0qG+JA533FugstGnfHbHnolYtQSK3yZKij1/kfqkHH4T4g2kgko87RYBSrITgcVSpcuO0VkREnQrseKE3S6WTUg7xpJOuRmVOcwk4eiq9+7wFBkY0MXaLdApvkTKpslC5hHVrN8u6tJKOnZ6soHFJr5XNmDG+jvPNsvRohAEyXWGdnUt3WH7tWTDhXneZoZHPHqNFAijn9gOiThSpjmIW0hjm4gLfZPHnVwlfZoVeNqtWaEghfD/lDKz/sCA6C3Vo9oFs6yEnQ6iCSAdTYvILEKAsagpsptvNdv/QWgyRyOsx7nG/LR3c9s0HxIKBmseOAD364zDfjNByeNSvq3/o/++A6aX2QQCY+der1StY/Nq6DoenqFfdZ4pLXrcaSkpmyXgo2OZKFqS6bJBEUObFZSuo7wFD/PX343pBWxcEPOwkXEp7qIU+EnT6eD8839QjT6zYGLQpEL8lOpOWpsnVwo4qR/h6o36J8btJJrqB3Z0bO+I=
