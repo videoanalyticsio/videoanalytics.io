@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>Basic Example - videoanalytics.io</title>
   </head>
   <body>
   	<h1>videoanalytics.io</h1>
@@ -16,9 +16,8 @@
   	</div>
 
     <!-- Compiled script(s) -->
-    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
-    <% } %>
+    <script src="../dist/videoanalytics.io.js"></script>
+
     <!-- Custom script(s) for example -->
     <script>
       var result = VideoAnalytics(2);

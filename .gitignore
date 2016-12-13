@@ -1,14 +1,10 @@
-# Logs
-*.log
-
-# Coverage directory
-coverage
-
-# Lockfile(s) (e.g., Yarn)
-*.lock
-
-# Dependency directories
+.DS_STORE
+*.log*
 node_modules
-
-# Distribution directory
-dist
+coverage/
+dist/
+*.sublime-project
+*.sublime-workspace
+.idea
+*.iml
+.vscode
