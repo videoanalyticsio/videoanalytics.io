@@ -1,5 +1,2 @@
-const Square = (x) => {
-	return x * x
-};
-
+const Square = x => (x * x);
 module.exports = Square;

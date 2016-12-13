@@ -1,8 +1,8 @@
 .DS_STORE
 *.log*
 node_modules
-coverage/
-dist/
+coverage
+dist
 *.sublime-project
 *.sublime-workspace
 .idea
