@@ -1,6 +1,6 @@
 # [videoanalytics.io](https://github.com/adamstankiewicz/videoanalytics.io) &middot; [![Build Status](https://travis-ci.org/adamstankiewicz/videoanalytics.io.svg?branch=master)](https://travis-ci.org/adamstankiewicz/videoanalytics.io) [![Coverage Status](https://coveralls.io/repos/github/adamstankiewicz/videoanalytics.io/badge.svg?branch=master)](https://coveralls.io/github/adamstankiewicz/videoanalytics.io?branch=master) [![dependencies Status](https://david-dm.org/adamstankiewicz/videoanalytics.io/status.svg)](https://david-dm.org/adamstankiewicz/videoanalytics.io) [![devDependencies Status](https://david-dm.org/adamstankiewicz/videoanalytics.io/dev-status.svg)](https://david-dm.org/adamstankiewicz/videoanalytics.io?type=dev) [![Slack Status](http://videoanalytics-slack.herokuapp.com/badge.svg)](http://videoanalytics-slack.herokuapp.com)
 
-> Hey there! Thanks for checking out the **videoanalytics.io** npm module. It's still a work-in-progress and a working version doesn't exist yet. Check back soon for updates!
+> Thanks for checking out the **videoanalytics.io** npm module. It's still a work-in-progress and, unfortunately, a working version does not exist yet. Check back soon for updates!
 
 ## Installation
 
@@ -17,4 +17,4 @@ npm -i --save videoanalytics.io
 ```
 
 ## License
-Licensed under the [MIT license](LICENSE.md).
+[MIT license](LICENSE).
