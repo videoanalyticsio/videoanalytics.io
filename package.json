@@ -1,6 +1,6 @@
 {
   "name": "videoanalytics.io",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "HTML5 video analytics",
   "main": "./dist/videoanalytics.io.js",
   "scripts": {
@@ -51,7 +51,8 @@
     "mocha": "^3.2.0",
     "unminified-webpack-plugin": "^1.1.1",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "write-file-webpack-plugin": "^3.4.2"
   },
   "dependencies": {
     "lodash": "^4.17.2"
