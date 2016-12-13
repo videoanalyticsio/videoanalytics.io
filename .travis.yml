@@ -10,8 +10,9 @@ cache:
   directories:
     - node_modules
 before_install:
-  - yarn lint
+  - npm -i -g yarn
 install:
+  - yarn lint
   - yarn test
   - yarn build
 after_success:
