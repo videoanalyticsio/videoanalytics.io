@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adamstankiewicz/videoanalytics.io.git"
+    "url": "https://github.com/videoanalyticsio/videoanalytics.io.git"
   },
   "keywords": [
     "video analytics",
@@ -21,12 +21,12 @@
     "video",
     "analytics"
   ],
-  "author": "Adam Stankiewicz",
-  "license": "MIT",
+  "author": "videoanalytics.io",
+  "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/adamstankiewicz/videoanalytics.io/issues"
+    "url": "https://github.com/videoanalyticsio/videoanalytics.io/issues"
   },
-  "homepage": "https://github.com/adamstankiewicz/videoanalytics.io#readme",
+  "homepage": "https://github.com/videoanalyticsio/videoanalytics.io#readme",
   "engines": {
     "node": ">=5.12.0"
   },
