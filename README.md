@@ -11,10 +11,10 @@ The fastest way to get started is to serve JavaScript from the [unpkg](https://u
 
 ```html
 <!-- Unminified -->
-<script src="https://unpkg.com/videoanalytics.io@0.1.1/dist/videoanalytics.io.js"></script>
+<script src="https://unpkg.com/videoanalytics.io@0.1.2/dist/videoanalytics.io.js"></script>
 
 <!-- Minified -->
-<script src="https://unpkg.com/videoanalytics.io@0.1.1/dist/videoanalytics.io.min.js"></script>
+<script src="https://unpkg.com/videoanalytics.io@0.1.2/dist/videoanalytics.io.min.js"></script>
 ```
 
 If you'd like to use [npm](https://www.npmjs.com/), it's as easy as:
