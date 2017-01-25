@@ -45,7 +45,7 @@ When calling `init()`, you must pass in a configuration object. The following fi
 
 | Option | Required | Description | Default |
 | ------ | ---------| ----------- | ------- |
-| DATA_CALLBACK | Yes | Function, A callback function to handle new user interactions | |
+| DATA_CALLBACK | Yes | Function, A callback function to handle new user interactions | None |
 | EVENTS_TO_TRACK | No | Array, User interactions to track (e.g., play, pause, seek) | `['loaded','end','seek','play','pause','volumeChange']` |
 | NUM_DECIMAL_PLACES | No | Integer, Number of decimal places to round (e.g., 3 => 12.682) | 3 |
 | NUM_EVENTS_BEFORE_SENDING | No | Integer, Number of events per video to store before calling the function in `DATA_CALLBACK` | 25 |
