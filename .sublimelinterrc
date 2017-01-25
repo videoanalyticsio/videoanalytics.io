@@ -1,0 +1,14 @@
+{
+  "linters": {
+    "eslint": {
+      "excludes": [
+        "**/node_modules/**",
+        "**/test/**",
+        "*.html",
+        "**/coverage/**",
+        "**/dist/**",
+        "**/examples/**"
+      ]
+    }
+  }
+}
