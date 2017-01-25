@@ -11,10 +11,10 @@ The fastest way to get started is to serve JavaScript from the [unpkg](https://u
 
 ```html
 <!-- Unminified -->
-<script src="https://unpkg.com/videoanalytics.io@0.1.0/dist/videoanalytics.io.js"></script>
+<script src="https://unpkg.com/videoanalytics.io@0.1.1/dist/videoanalytics.io.js"></script>
 
 <!-- Minified -->
-<script src="https://unpkg.com/videoanalytics.io@0.1.0/dist/videoanalytics.io.min.js"></script>
+<script src="https://unpkg.com/videoanalytics.io@0.1.1/dist/videoanalytics.io.min.js"></script>
 ```
 
 If you'd like to use [npm](https://www.npmjs.com/), it's as easy as:
@@ -25,32 +25,29 @@ npm -i --save videoanalytics.io
 
 ## Getting Started
 
-To use, instantiate `VideoAnalyticsIO()` and call the `init()` method:
-
 ```javascript
-var vAnalytics = new VideoAnalyticsIO()
-vAnalytics.init({
-  DATA_CALLBACK: (data, callback) => {
-    // do what you wish with the data, e.g., send to your server
-    console.log(data);
-    callback();
-  },
+const vAnalytics = new VideoAnalyticsIO();
+vAnalytics.init((data, done) => {
+	// do what you want with data
+  console.log(data);
+  done();
 });
 ```
 
-For more examples, see the `examples/` directory.
+### Configuration
 
-### Configuration Options
-When calling `init()`, you must pass in a configuration object. The following fields may be used:
-
-| Option | Required | Description | Default |
-| ------ | ---------| ----------- | ------- |
-| DATA_CALLBACK | Yes | Function, A callback function to handle new user interactions | None |
-| EVENTS_TO_TRACK | No | Array, User interactions to track (e.g., play, pause, seek) | `['loaded','end','seek','play','pause','volumeChange']` |
-| NUM_DECIMAL_PLACES | No | Integer, Number of decimal places to round (e.g., 12.682) | 3 |
-| NUM_EVENTS_BEFORE_SENDING | No | Integer, Number of events per video to store before calling the function in `DATA_CALLBACK` | 25 |
+```javascript
+vAnalytics.init([options], callback);
+```
+* `EVENTS_TO_TRACK`: an array of user interactions to track (e.g., play, pause, seek)
+* `NUM_DECIMAL_PLACES`: an integer for the number of decimal places to round (e.g., 12.68)
+* `NUM_EVENTS_BEFORE_SENDING`: an integer for the number of events per video to store before calling your provided callback function
 
 The default options can be seen in `src/config.defaults.js`.
+
+### Examples
+
+For full examples, see the `examples/` directory.
 
 ## License
 [MIT License](LICENSE.md)

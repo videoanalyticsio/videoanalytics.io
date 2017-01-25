@@ -24,13 +24,13 @@
 
     <!-- Custom script(s) for the example -->
     <script>
-      var vAnalytics = new VideoAnalyticsIO()
-      vAnalytics.init({
-        NUM_EVENTS_BEFORE_SENDING: 30,
-        DATA_CALLBACK: (data, callback) => {
-          console.log(data);
-          callback();
-        },
+      const vAnalytics = new VideoAnalyticsIO();
+      const options = {
+        NUM_EVENTS_BEFORE_SENDING: 50,
+      };
+      vAnalytics.init(options, (data, done) => {
+        console.log(data);
+        done();
       });
     </script>
   </body>
