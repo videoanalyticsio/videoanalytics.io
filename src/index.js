@@ -7,14 +7,24 @@ class VideoAnalyticsIO {
     this.videoPlayers = [];
   }
 
-  init(options) {
-    const config = options || DEFAULTS;
+  init(options, done) {
+    let config;
+    let callback;
+    if (typeof options === 'object') {
+      config = options;
+      callback = done;
+    } else if (typeof options === 'function') {
+      callback = options;
+      config = DEFAULTS;
+    } else {
+      throw new Error('Callback function for handling video events does not exist.');
+    }
 
     this.numEventsBeforeSending =
       config.NUM_EVENTS_BEFORE_SENDING || DEFAULTS.NUM_EVENTS_BEFORE_SENDING;
     this.eventsToTrack = config.EVENTS_TO_TRACK || DEFAULTS.EVENTS_TO_TRACK;
     this.numDecimalPlaces = config.NUM_DECIMAL_PLACES || DEFAULTS.NUM_DECIMAL_PLACES;
-    this.dataCallback = config.DATA_CALLBACK || DEFAULTS.DATA_CALLBACK;
+    this.dataCallback = callback || DEFAULTS.DATA_CALLBACK;
 
     this.getAllVideoPlayers();
     this.setEventListeners();
