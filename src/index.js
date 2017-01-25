@@ -76,6 +76,7 @@ class VideoAnalyticsIO {
   handleEvent(label, index) {
     const video = this.videoPlayers[index];
     let append = true;
+
     if (label === 'loaded') {
       this.loaded(index);
     }
