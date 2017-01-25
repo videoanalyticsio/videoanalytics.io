@@ -28,7 +28,7 @@ npm -i --save videoanalytics.io
 ```javascript
 const vAnalytics = new VideoAnalyticsIO();
 vAnalytics.init((data, done) => {
-	// do what you want with data
+  // do what you want with data
   console.log(data);
   done();
 });
