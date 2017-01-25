@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/travis/videoanalyticsio/videoanalytics.io/master.svg)](https://travis-ci.org/videoanalyticsio/videoanalytics.io) [![Coverage Status](https://img.shields.io/coveralls/videoanalyticsio/videoanalytics.io/master.svg)](https://coveralls.io/github/videoanalyticsio/videoanalytics.io?branch=master) [![dependencies Status](https://img.shields.io/david/videoanalyticsio/videoanalytics.io.svg)](https://david-dm.org/videoanalyticsio/videoanalytics.io) [![devDependencies Status](https://img.shields.io/david/dev/videoanalyticsio/videoanalytics.io.svg)](https://david-dm.org/videoanalyticsio/videoanalytics.io?type=dev) [![Slack Status](http://slack.videoanalytics.io/badge.svg)](http://slack.videoanalytics.io)
 
 > Thanks for checking out the **videoanalytics.io** npm module. It's still a work-in-progress. Check back soon for updates!
-> If you'd like to contribute to the project, join the [Slack group][http://slack.videoanalytics.io] and drop us a line!
+> If you'd like to contribute to the project, join the [Slack group](http://slack.videoanalytics.io) and drop us a line!
 
 ## Installation
 
