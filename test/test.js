@@ -12,7 +12,10 @@ describe('videoanalytics.io', () => {
     this.document = require('jsdom-global')(html);
     this.window = document.defaultView;
     vAnalytics = new VideoAnalyticsIO();
-    vAnalytics.init();
+    vAnalytics.init((data, done) => {
+      console.log(data);
+      done();
+    });
   });
 
   it('players array has length of 1', () => {
